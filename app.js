@@ -10,7 +10,7 @@ var empRouter = require("./routes/emp");
 
 const mongoose = require("mongoose");
 mongoose
-  .connect("mongodb://quang:123@localhost:27017/demo")
+  .connect("mongodb+srv://congtu7677:F3yIPo9LjNpCThVJ@cluster0.iqhk8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then(() => console.log("Connected to MongoDB..."))
   .catch((err) => console.error("Could not connect to MongoDB...", err));
 
@@ -31,12 +31,14 @@ app.use("/users", usersRouter);
 app.use("/emp", empRouter);
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function (req, res, next)
+{
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function (err, req, res, next)
+{
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
