@@ -20,6 +20,8 @@ html(lang="en")
           th Name
           th Email
           th Phone
+          th role 
+          th Actions
       tbody
         if emps != null && emps.length > 0
           each emp in emps
@@ -27,8 +29,12 @@ html(lang="en")
               td= emp.name
               td= emp.email
               td= emp.phone
+              td= emp.role
+              td 
+                a(href=`/emp/edit/${emp.id}`) Edit
+                a(href=`/emp/delete/${emp.id}`) Delete
         else
           tr
-            td(colspan="3") No record found
+            td(colspan="4") No record found
               
     
